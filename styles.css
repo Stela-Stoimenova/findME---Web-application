@@ -2,7 +2,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 10px;
+  
+  justify-content: space-between;
+  padding: 15px 30px;
+  /* rounded rectangle shape */
+  position: fixed;     /* stays on top when scrolling */
+  
+  left: 50%;
+  transform: translateX(-50%);
+   width: 100%;         /* adjust width as you like */
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.178); /* transparent white layer */
+  backdrop-filter: blur(12px);          /* the blur magic ✨ */
+  
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 a {
@@ -27,4 +40,13 @@ button {
 
 .dropdown-join-activities:hover .dropdown-content {
   display: block;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("assets/1.jpg");
+  background-size: cover;      /* make it fill the screen */
+  background-position: center; /* center it nicely */
+  background-repeat: no-repeat;/* prevent tiling */
+  height: 100vh;               /* full viewport height */
 }
