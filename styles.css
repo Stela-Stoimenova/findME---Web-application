@@ -18,9 +18,18 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.logo{
+  margin-left: 5px;
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  font-family: 'Segoe UI';
+}
+
 a {
   text-decoration: none;
   color: #333;
+
 }
 
 button {
@@ -29,22 +38,56 @@ button {
   border-radius: 6px;
   padding: 8px 12px;
   cursor: pointer;
+  background: none;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.178); /* transparent white layer */
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.dropdown-content a{
+  display: block;
+  padding: 10px 16px;
+}
+
+.dropdown-content a:hover{
+  background-color:   rgba(255, 255, 255, 0.737);
 }
 
 .dropdown-join-activities:hover .dropdown-content {
   display: block;
+
+}
+
+.dropdown-user:hover .dropdown-content {
+  display: block;
+
+}
+
+.dropbtn {
+  color: white;
+  font-size: large;
+}
+
+.location-btn {
+  color: white;
+  font-size: large;
+}
+
+.search-box
+{
+  background: rgba(255, 255, 255, 0.178); /* transparent white layer */
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
 }
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url("assets/1.jpg");
+  background-image: url("assets/background1.jpg");
   background-size: cover;      /* make it fill the screen */
   background-position: center; /* center it nicely */
   background-repeat: no-repeat;/* prevent tiling */
