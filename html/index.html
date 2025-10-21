@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>findME - home</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<!-- Hidden checkboxes to toggle modals -->
+<input type="checkbox" id="login-toggle" class="modal-toggle" />
+<input type="checkbox" id="signup-toggle" class="modal-toggle" />
+
+
+ <body>
+  <header class="navbar">
+  <div class="navbar-left">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="../html/index.html">findME</a>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-box">
+      <form>
+        <input type="text" placeholder="cities, events, workshops..." />
+        <button type="button">
+          <img src="../assets/searchIcon.png" alt="search-icon" class="search-icon">
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Right side: dropdowns and buttons -->
+  <div class="navbar-right">
+  <!--ABOUT DROPDOWN-->
+  <div class="dropdown-about">
+  <button class="dropbtn">
+    About ▾
+  </button>
+  <div class="dropdown-content">
+    <a href="../html/about.html">About Us</a>
+    <a href="../html/contact.html">Contact</a>
+  </div>
+</div>
+          <!-- Join Activities Dropdown -->
+
+    <div class="dropdown-join-activities">
+      <button class="dropbtn">
+        <img src="../assets/events-icon.png" class="join-icon" alt="Join events">
+      </button>
+      <div class="dropdown-content">
+        <a href="../html/events.html">Local events</a>
+        <a href="../html/festivals.html">Festivals</a>
+        <a href="../html/workshops.html">Workshops</a>
+      </div>  
+    </div>
+
+          <!-- Use Location -->
+   <a href="../html/mylocation.html"> <div class="use-location">
+      <button class="location-btn">
+        <img src="../assets/location-icon.png" alt="location" class="location-icon">
+      </button>
+    </div></a>
+
+    <div class="dropdown-user">
+  <button class="dropbtn">
+    <img src="../assets/user-icon.png" alt="User Icon" class="user-icon-logo">
+  </button>
+  <div class="dropdown-content">
+    <label for="login-toggle" class="dropdown-label">Log In</label>
+    <label for="signup-toggle" class="dropdown-label">Sign Up</label>
+  </div>
+</div>
+
+  </div>
+</header>
+
+
+<!-- ---------- HERO SECTION ---------- -->
+  <main>
+    <div class="hero">
+      <h1>Find events near you</h1>
+      <p>Discover cities, festivals, and workshops easily</p>
+      <button class="hero-btn">Explore Now</button>
+    </div>
+  </main>
+
+  <footer>
+  <p>&copy; 2025 findME. All rights reserved.</p>
+  <p>Follow us on 
+    <a href="#">Instagram</a> | 
+    <a href="#">Facebook</a>
+  </p>
+</footer>
+
+<!-- Overlay -->
+<div class="modal-overlay"></div>
+
+<!-- Login Modal -->
+<div class="modal" id="login-modal">
+  <label for="login-toggle" class="close-btn">&times;</label>
+  <form class="modal-form">
+    <input type="email" placeholder="Email" required />
+    <input type="password" placeholder="Password" required />
+    <button type="submit">Log In</button>
+  </form>
+</div>
+
+<!-- Signup Modal -->
+<div class="modal" id="signup-modal">
+  <label for="signup-toggle" class="close-btn">&times;</label>
+  <form class="modal-form">
+    <input type="text" placeholder="Full Name" required />
+    <input type="email" placeholder="Email" required />
+    <input type="password" placeholder="Password" required />
+    <button type="submit">Sign Up</button>
+  </form>
+</div>
+
+</body>
+</html>

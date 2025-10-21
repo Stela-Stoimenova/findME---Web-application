@@ -1,0 +1,377 @@
+@font-face {
+  font-family: 'Compotes-apple';
+  src: url('../assets/compotes-apple.otf') format('opentype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #222;
+  background-image: url('../assets/gradiant_background.jpeg');
+  background-attachment: fixed;
+  background-size: cover;       /* fills the screen */
+  background-repeat: no-repeat; 
+  background-position: center;  /* centers the image */
+  min-height: 100vh;
+}
+
+img {
+  vertical-align: middle;
+}
+
+
+
+/* ---------- NAVBAR ---------- */
+header.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space between logo and search bar */
+}
+
+.join-icon,
+.user-icon-logo,
+.location-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+
+/* ---------- LOGO ---------- */
+.logo a {
+  text-decoration: none;
+  color: black;
+  font-weight: 1000;
+  font-size: 1.5rem;
+  font-family: 'Compotes-apple';
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.logo a:hover {
+  color: #d1315688;
+}
+
+
+/* ---------- SEARCH BAR ---------- */
+.search-box form {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.132);
+  border-radius: 30px;
+  padding: 0.3rem 0.8rem;
+  margin: 0.3rem;
+  transition: 0.3s;
+
+}
+
+.search-box :hover
+{
+    transform: scale(1.01);
+
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0.4rem;
+  width: 200px;
+  font-size: 0.8rem;
+}
+
+.search-box input::placeholder {
+  color: #4e4a4a96;
+}
+
+.search-box button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* ---------- SEARCH ICON IMAGE ---------- */
+.search-box button img.search-icon {
+  width: 18px;         /* adjust as you like */
+  height: 18px;
+  object-fit: contain;  /* keeps proportions */
+  transition: 0.3s;
+}
+
+.search-box button img.search-icon:hover {
+  transform: scale(1.1);
+}
+
+
+/* ---------- DROPDOWN STYLES ---------- */
+.dropdown-join-activities,
+.dropdown-user,
+.dropdown-about,
+.use-location {
+  position: relative;
+  font-weight:500;
+}
+
+
+.dropbtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.dropbtn:hover {
+  transform: scale(1.05);
+}
+
+.dropdown-content {
+  display: none;
+  position:absolute;
+  right: 0;       
+  top: 100%;
+  background: rgba(255, 255, 255, 0.425);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  min-width: 160px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  color: #222;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f3f3f370;
+  color: #d1315688;
+}
+
+.dropdown-user .dropdown-content label {
+  display: block;
+  padding: 10px 16px;
+  color: #222;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  font-size: small;
+}
+
+.dropdown-user .dropdown-content label:hover {
+  background-color: #f3f3f370;
+  color: #d1315688;
+}
+
+/* Show dropdown on hover */
+.dropdown-join-activities:hover .dropdown-content,
+.dropdown-user:hover .dropdown-content,
+.dropdown-about:hover .dropdown-content {
+  display: block;
+}
+
+/* ---------- USER ICON ---------- */
+
+.user-icon-logo:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- USE LOCATION BUTTON ----------*/ 
+.use-location button {
+  background: none;
+  color: rgb(35, 34, 34);
+  border: none;
+  
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.use-location button:hover {
+  transform: scale(1.05);
+  
+}
+.location-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+/* ---------- MAIN SECTION ---------- */
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  text-align: center;
+  font-size: 1.8rem;
+  padding-top: 70px;
+  flex: 1;
+}
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+/* ---------- HERO BUTTON ---------- */
+
+.hero-btn {
+  background: linear-gradient(135deg,#d1315688, #c99137a2);
+  color: rgb(35, 34, 34);
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #c99137a2,#d1315688);
+
+}
+
+footer {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background: linear-gradient(135deg,#e99999,#f1c36ea4);
+  text-align: center;
+  font-size: 0.9rem;
+  color: #222;
+  padding: 1rem 0;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+  margin: -2rem;
+  border-radius: 30px;
+}
+footer a {
+  color: #d13156ee;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+.modal-toggle {
+  display: none; /* hidden checkbox */
+}
+
+.modal, .modal-overlay {
+  display: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+/* Center modal */
+.modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #faf9f9f6;
+  padding: 2rem;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  width: 300px;
+  max-width: 90%;
+  text-align: center;
+}
+
+/* Show modal when checkbox is checked */
+#login-toggle:checked ~ .modal-overlay,
+#login-toggle:checked ~ #login-modal,
+#signup-toggle:checked ~ .modal-overlay,
+#signup-toggle:checked ~ #signup-modal {
+  display: block;
+}
+
+/* Close button styling */
+.close-btn {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Modal Form Inputs like search bar */
+.modal-form input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: rgba(170, 138, 138, 0.132);
+  padding: 0.6rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+
+}
+
+.modal-form input::placeholder {
+  color: #4e4a4a96;
+}
+
+.modal-form input:focus {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal button {
+  background: linear-gradient(135deg,#d1315688, #c99137a2);
+  color: rgb(35, 34, 34);
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.modal button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #c99137a2,#d1315688);
+}
+
+
