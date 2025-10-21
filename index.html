@@ -9,19 +9,23 @@
 </head>
 
 <!--Every # should be replaced by a real link/connection to a page-->
-    <body>
-      <header class="navbar">
-        <div class="logo">
-          <a href="index.html" class="logo">findME</a>
-        </div>
+ <body>
+  <header class="navbar">
+  <div class="navbar-left">
+    <div class="logo">
+      <a href="index.html">findME</a>
+    </div>
 
-        <div class="search-box">
-        <form>
-          <input class="search-box" type="text" placeholder="cities, events, workshops..." />
-        </form>
-        </div>
+    <div class="search-box">
+      <form>
+        <input type="text" placeholder="cities, events, workshops..." />
+        <button type="button">🔍</button>
+      </form>
+    </div>
+  </div>
 
-      <div class="dropdown-join-activities">
+  <div class="navbar-right">
+    <div class="dropdown-join-activities">
       <button class="dropbtn">Join activities ▾</button>
       <div class="dropdown-content">
         <a href="#">Local events</a>
@@ -31,26 +35,26 @@
     </div>
 
     <div class="use-location">
-     <!--Triggers Check:
-      If userLoggedIn == true
-
-      If not → redirect to signup.html
-
-      If yes → redirect to nearby-events.html-->
-      <button class="location-btn">Use My Location</button>
+      <button>Use My Location</button>
     </div>
 
     <div class="dropdown-user">
       <button class="dropbtn">
-        <img src="" alt="User Icon" class="user-icon-logo">
+        <img src="assets/user-icon.png" alt="User Icon" class="user-icon-logo">
       </button>
-    <div class="dropdown-content">
-      <!--<button class="login-btn">Log In</button>
-      <button class="signup-btn">Sign Up</button>-->
-      <a href="#">Log In</a>
-      <a href="#">Sign Up</a>
+      <div class="dropdown-content">
+        <a href="#">Log In</a>
+        <a href="#">Sign Up</a>
+      </div>
     </div>
-    </div>
-   </header>  
-  </body>
+  </div>
+</header>
+
+
+     
+    
+  <main>
+
+  </main>
+ </body>
 </html>
