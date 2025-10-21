@@ -93,3 +93,27 @@ body {
   background-repeat: no-repeat;/* prevent tiling */
   height: 100vh;               /* full viewport height */
 }
+.location-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  padding: 8px 16px;
+  border-radius: 20px;
+  
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.location-btn:hover {
+  background-color: #03244710;
+}
+
+/* Style for the small PNG icon */
+.location-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
