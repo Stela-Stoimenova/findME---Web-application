@@ -12,26 +12,28 @@
  <body>
   <header class="navbar">
   <div class="navbar-left">
+    <!-- Logo -->
     <div class="logo">
       <a href="index.html">findME</a>
     </div>
 
-        <div class="search-box">
-        <form>
-          <input class="search-box" type="text" placeholder="cities, events, workshops..." />
-          <img src="assets/searchIcon.png" alt="search" class="search-icon">
-        </form>
-        </div>
+    <!-- Search Bar -->
     <div class="search-box">
       <form>
         <input type="text" placeholder="cities, events, workshops..." />
-        <button type="button">🔍</button>
+        <button type="button">
+          <img src="assets/searchIcon.png" alt="search-icon" class="search-icon">
+        </button>
       </form>
     </div>
   </div>
 
-      <div class="dropdown-join-activities">
-      <button class="dropbtn"><img src="assets/JOINeventsICONpng.png" class="join-icon" alt="Join events"></button>
+  <!-- Right side: dropdowns and buttons -->
+  <div class="navbar-right">
+    <div class="dropdown-join-activities">
+      <button class="dropbtn">
+        <img src="" class="join-icon" alt="Join events">
+      </button>
       <div class="dropdown-content">
         <a href="#">Local events</a>
         <a href="#">Festivals</a>
@@ -40,12 +42,6 @@
     </div>
 
     <div class="use-location">
-     <!--Triggers Check:
-      If userLoggedIn == true
-
-      If not → redirect to signup.html
-
-      If yes → redirect to nearby-events.html-->
       <button class="location-btn">Use My Location</button>
     </div>
 
