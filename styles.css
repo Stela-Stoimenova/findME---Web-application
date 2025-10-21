@@ -91,6 +91,19 @@ header.navbar {
   font-size: 0.9rem;
 }
 
+/* ---------- SEARCH ICON IMAGE ---------- */
+.search-box button img.search-icon {
+  width: 18px;         /* adjust as you like */
+  height: 18px;
+  object-fit: contain;  /* keeps proportions */
+  transition: 0.3s;
+}
+
+.search-box button img.search-icon:hover {
+  transform: scale(1.1);
+}
+
+
 /* ---------- DROPDOWN STYLES ---------- */
 .dropdown-join-activities,
 .dropdown-user {
@@ -214,5 +227,5 @@ main {
 .location-icon {
   width: 40px;
   height: 40px;
-  object-fit: contain;
+  object-fit: contain;
 }
