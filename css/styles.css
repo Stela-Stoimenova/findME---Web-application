@@ -44,17 +44,17 @@ header.navbar {
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 1rem; /* space between logo and search bar */
+  gap: 1.2rem; /* space between logo and search bar */
 }
 
 .join-icon,
 .user-icon-logo,
-.location-icon {
+.location-icon,
+.about-icon {
   width: 25px;
   height: 25px;
   object-fit: contain;
 }
-
 
 /* ---------- LOGO ---------- */
 .logo a {
@@ -192,6 +192,12 @@ header.navbar {
   display: block;
 }
 
+/* ---------- ABOUT ICON ---------- */
+
+.dropdown-about{
+  margin-right: 1rem; 
+}
+
 /* ---------- USER ICON ---------- */
 
 .user-icon-logo:hover {
@@ -229,7 +235,7 @@ header.navbar {
 
 /* ---------- MAIN SECTION ---------- */
 main {
-  height: 100vh;
+  height:100vh;
   display: flex;
   justify-content: center;
   align-items: center;
