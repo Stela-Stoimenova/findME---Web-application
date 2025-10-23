@@ -78,7 +78,8 @@ header.navbar {
 .join-icon,
 .user-icon-logo,
 .location-icon,
-.about-icon {
+.about-icon,
+.category-icon {
   width: 25px;
   height: 25px;
   object-fit: contain;
@@ -87,6 +88,7 @@ header.navbar {
 /* =========================================================
    LOGO
 ========================================================= */
+
 .logo a {
   text-decoration: none;
   color: black;
@@ -110,7 +112,6 @@ header.navbar {
   background: rgba(255, 255, 255, 0.132);
   border-radius: 30px;
   padding: 0.3rem 0.8rem;
-  margin: 0.3rem;
   transition: 0.3s;
 }
 
@@ -148,6 +149,20 @@ header.navbar {
 
 .search-box button img.search-icon:hover {
   transform: scale(1.1);
+}
+
+/* =========================================================
+   CATEGORY DROPDOWN
+========================================================= */
+.dropdown-categories {
+  position: relative;
+  font-weight: 500;
+}
+
+.categories-content {
+  left: 0; 
+  right: auto;
+  min-width: 180px;
 }
 
 /* =========================================================
@@ -216,7 +231,8 @@ header.navbar {
 /* ---------- SHOW DROPDOWN ON HOVER ---------- */
 .dropdown-join-activities:hover .dropdown-content,
 .dropdown-user:hover .dropdown-content,
-.dropdown-about:hover .dropdown-content {
+.dropdown-about:hover .dropdown-content,
+.dropdown-categories:hover .dropdown-content {
   display: block;
 }
 
