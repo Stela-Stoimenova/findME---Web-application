@@ -1,39 +1,66 @@
+/* =========================================================
+   FONT IMPORT
+========================================================= */
 @font-face {
   font-family: 'Compotes-apple';
   src: url('../assets/compotes-apple.otf') format('opentype');
 }
 
+/* =========================================================
+   KEYFRAMES
+========================================================= */
+@keyframes softMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* =========================================================
+   GLOBAL RESETS & BASE STYLES
+========================================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* hides horizontal scroll */
+}
+
 body {
   font-family: Arial, sans-serif;
   color: #222;
-  background-image: url('../assets/gradiant_background.jpeg');
-  background-attachment: fixed;
-  background-size: cover;       /* fills the screen */
-  background-repeat: no-repeat; 
-  background-position: center;  /* centers the image */
+  background: radial-gradient(
+    circle at 20% 30%, 
+    #ffb3ba 0%, #ffd6a5 20%, #fdffb6 35%, 
+    #caffbf 55%, #9bf6ff 75%, #a0c4ff 90%, #bdb2ff 100%
+  );
+  background-blend-mode: screen;
+  background-size: 200% 200%;
+  animation: softMove 15s ease-in-out infinite alternate;
+  background-position: center;
   min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 img {
   vertical-align: middle;
 }
 
-
-
-/* ---------- NAVBAR ---------- */
+/* =========================================================
+   NAVBAR
+========================================================= */
 header.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  width: 100%;
-  top: 0;
+  top: 0; left: 0; right: 0;
+  width: 100vw;
   padding: 0.6rem 1.2rem;
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
@@ -44,9 +71,10 @@ header.navbar {
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 1.2rem; /* space between logo and search bar */
+  gap: 1.2rem;
 }
 
+/* ---------- ICONS ---------- */
 .join-icon,
 .user-icon-logo,
 .location-icon,
@@ -56,7 +84,9 @@ header.navbar {
   object-fit: contain;
 }
 
-/* ---------- LOGO ---------- */
+/* =========================================================
+   LOGO
+========================================================= */
 .logo a {
   text-decoration: none;
   color: black;
@@ -71,8 +101,9 @@ header.navbar {
   color: #d1315688;
 }
 
-
-/* ---------- SEARCH BAR ---------- */
+/* =========================================================
+   SEARCH BAR
+========================================================= */
 .search-box form {
   display: flex;
   align-items: center;
@@ -81,13 +112,10 @@ header.navbar {
   padding: 0.3rem 0.8rem;
   margin: 0.3rem;
   transition: 0.3s;
-
 }
 
-.search-box :hover
-{
-    transform: scale(1.01);
-
+.search-box:hover {
+  transform: scale(1.01);
 }
 
 .search-box input {
@@ -112,9 +140,9 @@ header.navbar {
 
 /* ---------- SEARCH ICON IMAGE ---------- */
 .search-box button img.search-icon {
-  width: 18px;         /* adjust as you like */
+  width: 18px;
   height: 18px;
-  object-fit: contain;  /* keeps proportions */
+  object-fit: contain;
   transition: 0.3s;
 }
 
@@ -122,16 +150,16 @@ header.navbar {
   transform: scale(1.1);
 }
 
-
-/* ---------- DROPDOWN STYLES ---------- */
+/* =========================================================
+   DROPDOWN MENUS
+========================================================= */
 .dropdown-join-activities,
 .dropdown-user,
 .dropdown-about,
 .use-location {
   position: relative;
-  font-weight:500;
+  font-weight: 500;
 }
-
 
 .dropbtn {
   background: none;
@@ -148,8 +176,8 @@ header.navbar {
 
 .dropdown-content {
   display: none;
-  position:absolute;
-  right: 0;       
+  position: absolute;
+  right: 0;
   top: 100%;
   background: rgba(255, 255, 255, 0.425);
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
@@ -185,31 +213,28 @@ header.navbar {
   color: #d1315688;
 }
 
-/* Show dropdown on hover */
+/* ---------- SHOW DROPDOWN ON HOVER ---------- */
 .dropdown-join-activities:hover .dropdown-content,
 .dropdown-user:hover .dropdown-content,
 .dropdown-about:hover .dropdown-content {
   display: block;
 }
 
-/* ---------- ABOUT ICON ---------- */
-
-.dropdown-about{
-  margin-right: 1rem; 
+/* =========================================================
+   ICONS: ABOUT, USER, LOCATION
+========================================================= */
+.dropdown-about {
+  margin-right: 1rem;
 }
-
-/* ---------- USER ICON ---------- */
 
 .user-icon-logo:hover {
   transform: scale(1.05);
 }
 
-/* ---------- USE LOCATION BUTTON ----------*/ 
 .use-location button {
   background: none;
   color: rgb(35, 34, 34);
   border: none;
-  
   padding: 8px 16px;
   font-weight: 600;
   cursor: pointer;
@@ -218,12 +243,12 @@ header.navbar {
 
 .use-location button:hover {
   transform: scale(1.05);
-  
 }
+
 .location-btn {
   display: flex;
   align-items: center;
-  gap: 8px; /* space between icon and text */
+  gap: 8px;
   padding: 8px 16px;
   border-radius: 20px;
   color: black;
@@ -233,18 +258,22 @@ header.navbar {
   transition: background-color 0.2s ease;
 }
 
-/* ---------- MAIN SECTION ---------- */
+/* =========================================================
+   MAIN SECTION (HERO)
+========================================================= */
 main {
-  height:100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   color: black;
   text-align: center;
   font-size: 1.8rem;
-  padding-top: 70px;
+  padding: 0;
+  margin: 0;
   flex: 1;
 }
+
 .hero h1 {
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
@@ -254,10 +283,10 @@ main {
   font-size: 1rem;
   margin-bottom: 1rem;
 }
-/* ---------- HERO BUTTON ---------- */
 
+/* ---------- HERO BUTTON ---------- */
 .hero-btn {
-  background: linear-gradient(135deg,#d1315688, #c99137a2);
+  background: linear-gradient(135deg, #d1315688, #c99137a2);
   color: rgb(35, 34, 34);
   border: none;
   border-radius: 20px;
@@ -269,14 +298,16 @@ main {
 
 .hero-btn:hover {
   transform: scale(1.05);
-  background: linear-gradient(135deg, #c99137a2,#d1315688);
-
+  background: linear-gradient(135deg, #c99137a2, #d1315688);
 }
 
+/* =========================================================
+   FOOTER
+========================================================= */
 footer {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  background: linear-gradient(135deg,#e99999,#f1c36ea4);
+  background: linear-gradient(135deg, #e9999994, #f1c36e8c);
   text-align: center;
   font-size: 0.9rem;
   color: #222;
@@ -285,19 +316,25 @@ footer {
   margin: -2rem;
   border-radius: 30px;
 }
+
 footer a {
-  color: #d13156ee;
+  color: #c77e19f3;
   text-decoration: none;
 }
+
 footer a:hover {
   text-decoration: underline;
 }
 
+/* =========================================================
+   MODAL (LOGIN & SIGNUP)
+========================================================= */
 .modal-toggle {
   display: none; /* hidden checkbox */
 }
 
-.modal, .modal-overlay {
+.modal, 
+.modal-overlay {
   display: none;
 }
 
@@ -309,7 +346,7 @@ footer a:hover {
   z-index: 999;
 }
 
-/* Center modal */
+/* ---------- MODAL BOX ---------- */
 .modal {
   position: fixed;
   top: 50%; left: 50%;
@@ -324,7 +361,7 @@ footer a:hover {
   text-align: center;
 }
 
-/* Show modal when checkbox is checked */
+/* ---------- SHOW MODAL WHEN CHECKED ---------- */
 #login-toggle:checked ~ .modal-overlay,
 #login-toggle:checked ~ #login-modal,
 #signup-toggle:checked ~ .modal-overlay,
@@ -332,14 +369,14 @@ footer a:hover {
   display: block;
 }
 
-/* Close button styling */
+/* ---------- CLOSE BUTTON ---------- */
 .close-btn {
   float: right;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-/* Modal Form Inputs like search bar */
+/* ---------- MODAL FORM INPUTS ---------- */
 .modal-form input {
   width: 100%;
   border: none;
@@ -351,7 +388,6 @@ footer a:hover {
   font-size: 0.9rem;
   transition: 0.3s;
   box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
-
 }
 
 .modal-form input::placeholder {
@@ -363,7 +399,7 @@ footer a:hover {
 }
 
 .modal button {
-  background: linear-gradient(135deg,#d1315688, #c99137a2);
+  background: linear-gradient(135deg, #d1315688, #c99137a2);
   color: rgb(35, 34, 34);
   border: none;
   border-radius: 20px;
@@ -377,7 +413,5 @@ footer a:hover {
 
 .modal button:hover {
   transform: scale(1.05);
-  background: linear-gradient(135deg, #c99137a2,#d1315688);
+  background: linear-gradient(135deg, #c99137a2, #d1315688);
 }
-
-
