@@ -643,3 +643,44 @@ box-shadow: 0 0 15px #6de6d3ec;
 .card-back audio {
     display: none; 
 }
+
+/*---------ABOUT US PAGE---------*/
+
+.about-main{
+  max-width: 900px;
+  margin: 80px auto 60px auto; /* leave room for fixed navbar */
+  padding: 2rem;
+  background: linear-gradient(135deg, #f6ffc6, #ffa5a5);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  color: #000;
+}
+.about-main:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ffa5a5, #f6ffc6);
+}
+
+.about-main h1,
+ .findme{
+  text-align: center;
+  font-size: 2.2rem;
+  font-family: 'Compotes-apple';
+  margin-bottom: 1rem;
+}
+.about-main h2{
+  text-align: center;
+  font-size: 2.0rem;
+  font-family: 'Compotes-apple';
+  margin-bottom: auto;
+}
+#about-body{
+  background:radial-gradient(circle at 50% 50%,#888081,#140f10);
+  background-size: 200% 200%;
+  animation: softMove 15s ease-in-out infinite alternate;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
