@@ -21,6 +21,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 html {
@@ -64,10 +65,10 @@ header.navbar {
   top: 0; left: 0; right: 0;
   width: 100vw;
   padding: 0.6rem 1.2rem;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
   z-index: 1000;
-  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -83,7 +84,8 @@ header.navbar {
 .user-icon-logo,
 .location-icon,
 .about-icon,
-.category-icon {
+.category-icon, 
+.interact-icon{
   width: 25px;
   height: 25px;
   object-fit: contain;
@@ -198,8 +200,8 @@ header.navbar {
   position: absolute;
   right: 0;
   top: 100%;
-  background: rgba(255, 255, 255, 0.425);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   border-radius: 10px;
   min-width: 160px;
 }
@@ -282,7 +284,6 @@ header.navbar {
    MAIN SECTION (HERO)
 ========================================================= */
 main {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -293,6 +294,7 @@ main {
   margin: 0;
   flex: 1;
 }
+
 
 .hero h1 {
   font-size: 2.2rem;
@@ -327,15 +329,15 @@ main {
 footer {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
   text-align: center;
   font-size: 0.9rem;
   color: #222;
   padding: 1rem 0;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
   margin: 0;
-  border-radius: 15px;
+  border-radius: 15px 15px 0 0;
   margin-top: auto;
 }
 
@@ -436,4 +438,208 @@ footer a:hover {
 .modal button:hover {
   transform: scale(1.05);
   background: linear-gradient(135deg, #c99137a2, #d1315688);
+}
+
+/* =========================================================
+   INTERACTIVE PAGE STYLES (Update for Minimalism)
+========================================================= */
+
+main.interactive-page {
+padding-top: 6rem; 
+padding-bottom: 4rem; 
+text-align: center;
+display: flex;
+flex: 1;
+justify-content: center;
+}
+
+.api-container {
+padding: 3rem 2rem; 
+width: 90%; 
+max-width: 800px; 
+margin: 0 auto; 
+}
+
+.api-container h1 {
+font-size: 1.8rem; 
+font-weight: 800; 
+letter-spacing: 0.5px; 
+margin-bottom: 0.5rem; 
+width: 100%;
+}
+
+.api-container h2 {
+font-size: 1.2rem; 
+font-weight: 600;
+margin-bottom: 1rem;
+width: 100%;
+margin-bottom: 2rem;
+}
+
+.api-section {
+margin-bottom: 3rem; 
+padding: 1.5rem;
+background: rgba(255, 255, 255, 0.95); 
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+border: 1px solid rgba(0, 0, 0, 0.05); 
+border-radius: 20px;  
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+/*#event-video {
+ width: calc(100% + 3rem); 
+ height: auto;
+ margin-left: -1.5rem;
+ margin-right: -1.5rem;
+ margin-top: 0;
+ border-radius: 0 0 20px 20px; 
+ box-shadow: none; 
+}*/
+
+.audio-controls{
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.interact-btn {
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+margin: 0 0.5rem;
+padding: 0.5rem;
+transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+border: 2px solid #49e4cde0;
+background: #49e4cdec;
+border-radius: 50%;
+}
+
+.interact-btn:hover {
+transform: scale(1.1); 
+background: #6de6d3ec;
+box-shadow: 0 0 15px #6de6d3ec;
+}
+
+.favorite-btn {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8); 
+    border: 2px solid #ffb3ba;
+    padding: 0.5rem;
+    border-radius: 50%; 
+    width: 40px; 
+    height: 40px; 
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.favorite-btn:hover {
+    transform: scale(1.1); 
+    background: #ffb3ba; 
+    box-shadow: 0 0 15px rgba(255, 179, 186, 0.8); 
+}
+
+.favorite-btn:hover .interact-btn{
+  filter: brightness(0.5);
+}
+
+.event-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: justify; 
+    width: 100%;
+}
+/* =========================================================
+   3D FLIP CARD EFFECT
+========================================================= */
+.event-card {
+    position: relative; 
+    display: block; 
+    height: 450px; 
+    padding: 0; 
+    perspective: 1000px; 
+    background: none; 
+    box-shadow: none;
+    border: none;
+}
+
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1); 
+    transform-style: preserve-3d; 
+}
+
+.event-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    backface-visibility: hidden; 
+    padding: 1.5rem;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), #caffbf); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.video-player-box {
+    width: 100%;
+    margin: 0.5rem auto 1rem auto;
+    border-radius: 10px;
+    max-height: 250px;
+    overflow: hidden;
+}
+.card-front video { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 0;
+}
+
+.audio-controls {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+.audio-status {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+.card-back audio {
+    display: none; 
 }
