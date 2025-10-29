@@ -650,14 +650,13 @@ box-shadow: 0 0 15px #6de6d3ec;
   max-width: 900px;
   margin: 80px auto 60px auto; /* leave room for fixed navbar */
   padding: 2rem;
-  background: linear-gradient(135deg, #f6ffc6, #ffa5a5);
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   color: #000;
 }
 .about-main:hover {
   transform: scale(1.05);
-  background: linear-gradient(135deg, #ffa5a5, #f6ffc6);
+  background: linear-gradient(135deg, #ffa5a5b8, #f6ffc6);
 }
 
 .about-main h1,
@@ -670,11 +669,10 @@ box-shadow: 0 0 15px #6de6d3ec;
 .about-main h2{
   text-align: center;
   font-size: 2.0rem;
-  font-family: 'Compotes-apple';
+  font-family: Georgia, 'Times New Roman', Times, serif;
   margin-bottom: auto;
 }
 #about-body{
-  background:radial-gradient(circle at 50% 50%,#888081,#140f10);
   background-size: 200% 200%;
   animation: softMove 15s ease-in-out infinite alternate;
   background-position: center;
