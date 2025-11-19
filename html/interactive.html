@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>findME - home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>findME - Home</title>
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/interactive.css" />
 </head>
 
-<!-- Hidden checkboxes to toggle modals -->
-<input type="checkbox" id="login-toggle" class="modal-toggle" />
-<input type="checkbox" id="signup-toggle" class="modal-toggle" />
+<body>
 
-
- <body>
-  <header class="navbar">
+<header class="navbar">
   <div class="navbar-left">
     <!-- Logo -->
     <div class="logo">
@@ -44,6 +46,8 @@
         </button>
       </form>
     </div>
+              <button id="locate-btn" class="location-btn">Use My Location</button>
+
 
    
 </div>
@@ -76,43 +80,35 @@
   </div>
 </header>
 
+<main>
+  <section id="interactive-section">
 
-<!-- ---------- HERO SECTION ---------- -->
-  <main>
-    
-  </main>
+    <div id="canvas-container">
+        <canvas id="myCanvas" width="400" height="200"></canvas>
+    </div>
+    <!-- Map -->
+    <div id="map-section">
+      <h2>Local Events Map</h2>
+      <div id="map" aria-label="Local events map"></div>
+    </div>
 
-  <footer>
+    <!-- Event Grid -->
+    <div id="event-grid"></div>
+
+  </section>
+</main>
+
+<footer>
   <p>&copy; 2025 findME. All rights reserved.</p>
-  <p>Our github accounts
-    <a href="#">Github-Stela</a> | 
-    <a href="#">Github-Daria</a>
-  </p>
 </footer>
 
-<!-- Overlay -->
-<div class="modal-overlay"></div>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-<!-- Login Modal -->
-<div class="modal" id="login-modal">
-  <label for="login-toggle" class="close-btn">&times;</label>
-  <form class="modal-form">
-    <input type="email" placeholder="Email" required />
-    <input type="password" placeholder="Password" required />
-    <button type="submit">Log In</button>
-  </form>
-</div>
-
-<!-- Signup Modal -->
-<div class="modal" id="signup-modal">
-  <label for="signup-toggle" class="close-btn">&times;</label>
-  <form class="modal-form">
-    <input type="text" placeholder="Full Name" required />
-    <input type="email" placeholder="Email" required />
-    <input type="password" placeholder="Password" required />
-    <button type="submit">Sign Up</button>
-  </form>
-</div>
+<!-- Custom Scripts -->
+<script src="../js/events.js"></script>
+<script src="../js/map.js"></script>
+<script src="../js/script.js"></script>
 
 </body>
 </html>

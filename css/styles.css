@@ -57,6 +57,7 @@ body {
   display: flex;
   flex-direction: column;
   opacity:0.95;
+  padding-top: 2rem;
 }
 
 img {

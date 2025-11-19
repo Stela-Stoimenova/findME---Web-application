@@ -1,36 +1,127 @@
-/* interactive.css */
 
-/* Canvas Section */
-#interactive-canvas-section {
-  width: 100%;
-  height: 400px;
-  margin: 2rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#interactive-section {
+    /* Uses the entire space below the header */
+    padding: 2rem 1rem; 
+    max-width: 1400px; /* Optional: Sets a max width for large screens */
+    margin: 4rem auto 2rem; /* Centers the container */
+    
+    /* === The Crucial Layout Fix === */
+    display: grid;
+    /* Defines a grid with two columns: the map column (auto) and the event column (1fr) */
+    grid-template-columns: minmax(300px, 40%) 1fr; 
+    gap: 2rem; /* Spacing between the map and the event cards */
 }
 
-#eventsCanvas {
-  width: 90%;
-  height: 100%;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Map Section */
 #map-section {
-  width: 100%;
-  height: 500px;
-  margin: 2rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    grid-column: 1; /* Place map in the first column */
 }
 
-#eventsMap {
-  width: 90%;
-  height: 100%;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* Map */
+#map {
+    width: 100%;
+    height: 70vh;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+    margin-bottom: 2rem;
+}
+
+/* Event Grid */
+#event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    grid-column: 2;
+}
+
+/* Event Card */
+.event-card {
+    position: relative;
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Event Image */
+.event-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Event Text */
+.event-card h3 {
+    font-size: 1.2rem;
+    margin: 0.25rem 0;
+    color: var(--primary-color);
+}
+
+.event-card p {
+    font-size: 0.95rem;
+    margin: 0.15rem 0;
+    color: #333;
+}
+
+/* Audio Container */
+.audio-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Play Button */
+.play-btn {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.play-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Favorite Button */
+.favorite-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.favorite-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    
+    #interactive-section {
+        /* On small screens, stack them back to a single column */
+        grid-template-columns: 1fr; 
+    }
+    
+    #map {
+        height: 60vh;
+    }
+
+    
 }
