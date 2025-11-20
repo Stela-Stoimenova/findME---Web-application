@@ -17,8 +17,8 @@
     function addEventMarker(ev) {
         const marker = L.circleMarker([ev.lat, ev.lng], {
             radius: 8,
-            fillColor: "#5D9CBA",
-            color: "#2e434c",
+            fillColor: "#f30f6aff",
+            color: "#f30f6aff",
             weight: 1.5,
             fillOpacity: 0.9
         }).addTo(map);

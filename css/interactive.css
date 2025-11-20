@@ -2,27 +2,31 @@
 #interactive-section {
     /* Uses the entire space below the header */
     padding: 2rem 1rem; 
-    max-width: 1400px; /* Optional: Sets a max width for large screens */
-    margin: 4rem auto 2rem; /* Centers the container */
-    
-    /* === The Crucial Layout Fix === */
+    margin: 4rem auto 4rem; /* Centers the container */
     display: grid;
-    /* Defines a grid with two columns: the map column (auto) and the event column (1fr) */
-    grid-template-columns: minmax(300px, 40%) 1fr; 
-    gap: 2rem; /* Spacing between the map and the event cards */
+    grid-template-columns: minmax(800px, 40%) 1fr; 
+    gap: 3rem; 
 }
 
 #map-section {
     grid-column: 1; /* Place map in the first column */
+    
+}
+
+h2{
+    font-family: 'Compotes-apple';
+    letter-spacing: 4px;
 }
 
 /* Map */
 #map {
+    
     width: 100%;
     height: 70vh;
     border-radius: 15px;
     box-shadow: 0 6px 25px rgba(0,0,0,0.15);
     margin-bottom: 2rem;
+    
 }
 
 /* Event Grid */
@@ -104,6 +108,10 @@
     background: none;
     cursor: pointer;
     z-index: 5;
+}
+
+.favorite-btn :hover{
+    background-color: pink;
 }
 
 .favorite-btn img {

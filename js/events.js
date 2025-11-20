@@ -6,7 +6,7 @@ const EVENTS = [
         date: "Oct 2025",
         lat: 44.439663,
         lng: 26.096306,
-        image: "../assets/jazz-thumb.jpg",
+        image: "../assets/jazzfestival.jpg",
         audio: "../assets/jazz-promo.mp3"
     },
     {
@@ -16,7 +16,7 @@ const EVENTS = [
         date: "Nov 2025",
         lat: 44.437825,
         lng: 26.097075,
-        image: "../assets/tech-thumb.jpg",
+        image: "../assets/techworkshop.jpg",
         audio: "../assets/tech-promo.mp3"
     },
     {
@@ -26,7 +26,7 @@ const EVENTS = [
         date: "Oct 18, 2025",
         lat: 44.439000,
         lng: 26.099500,
-        image: "../assets/streetfood-thumb.jpg",
+        image: "../assets/streetfood.jpg",
         audio: "../assets/streetfood-promo.mp3"
     }
 ];
