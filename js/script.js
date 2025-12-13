@@ -2,6 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const locateBtn = document.getElementById("locate-btn");
     const searchBtn = document.getElementById("search-btn");
     const cityInput = document.getElementById("city-input");
+    const sounds = {
+        sound1 : new Audio("../assets/sax-jazz-77053.mp3"),
+        sound2 : new Audio("../assets/free-tech-house-bass-253451.mp3"),
+        sound3 : new Audio("../assets/food-truck-1887-379072.mp3")
+    }
     
     if (locateBtn) {
         locateBtn.addEventListener("click", () => {
@@ -36,4 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+    Object.values(sounds).forEach(audio =>{
+        audio.volume = 0.5;
+    })
 });

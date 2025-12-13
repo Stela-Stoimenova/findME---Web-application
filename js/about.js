@@ -5,9 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!canvas) return; // Exit if canvas is not found
 
   const ctx = canvas.getContext("2d");
-
-
-
   const visits = [12, 25, 18, 40, 35, 50, 42]; 
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
