@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const visits = [12, 25, 18, 40, 35, 50, 42]; 
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-  const barWidth = 30;
+  const barWidth = 35;
   const barSpacing = 20;
   const maxHeight = canvas.height - 20;
 
