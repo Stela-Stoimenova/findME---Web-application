@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>findME - home</title>
   <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/about.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <!-- Hidden checkboxes to toggle modals -->
@@ -12,7 +14,7 @@
 <input type="checkbox" id="signup-toggle" class="modal-toggle" />
 
 
- <body id="about-body">
+ <body>
   <header class="navbar">
   <div class="navbar-left">
     <!-- Logo -->
@@ -60,29 +62,8 @@
   </button>
   <div class="dropdown-content">
     <a href="../html/about.html">About Us</a>
-    <a href="../html/contact.html">Contact</a>
   </div>
   </div>
-  
-          <!-- Join Activities Dropdown -->
-
-    <div class="dropdown-join-activities">
-      <button class="dropbtn">
-        <img src="../assets/events-icon.png" class="join-icon" alt="Join events">
-      </button>
-      <div class="dropdown-content">
-        <a href="../html/events.html">Local events</a>
-        <a href="../html/festivals.html">Festivals</a>
-        <a href="../html/workshops.html">Workshops</a>
-      </div>  
-    </div>
-
-          <!-- Use Location -->
-   <a href="../html/mylocation.html"> <div class="use-location">
-      <button class="location-btn">
-        <img src="../assets/location-icon.png" alt="location" class="location-icon">
-      </button>
-    </div></a>
 
     <div class="dropdown-user">
   <button class="dropbtn">
@@ -96,7 +77,12 @@
 
   </div>
 </header>
-<main class="about-main">
+
+
+<!-- ---------- HERO SECTION ---------- -->
+  <main>
+    
+  <section class="main-class">
   <section class="about">
      <h1>About findME</h1>
       <p><strong class="findme">findME</strong> is a location-based event discovery platform that helps you explore activities happening near you — from concerts and workshops to festivals and wellness events. Whether you're new in town or just want something fun to do, findME connects you to your local community.</p>
@@ -106,11 +92,22 @@
 
       <h2>How It Works</h2>
       <p>findME uses your location to suggest events that match your interests and are happening close by. You can browse categories like <em>sport</em>, <em>entertainment</em>, <em>educational</em>, and more — all organized for easy exploration.</p>
-
-      
   </section>
-</main>
-<footer>
+   <section class="stats-section">
+    <h1>SITE STATISTICS</h1>
+    <div class="stats-content">
+      <div class="stats-text">
+        <p>Check out our site activity! The chart shows visits per day to give you an idea of our most popular days.</p>
+      </div>
+      <div class="stats-canvas">
+        <canvas id="visitsCanvas" width="400" height="400" style="border: 1px solid black;"></canvas>
+      </div>
+    </div>
+   </section>
+   </section> 
+  </main>
+
+  <footer>
   <p>&copy; 2025 findME. All rights reserved.</p>
   <p>Our github accounts
     <a href="#">Github-Stela</a> | 
@@ -141,6 +138,9 @@
     <button type="submit">Sign Up</button>
   </form>
 </div>
+
+<script src="../js/about.js"></script>
+
 
 </body>
 </html>

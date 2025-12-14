@@ -24,6 +24,14 @@
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+:root {
+  --space-xs: 0.4rem;
+  --space-sm: 0.8rem;
+  --space-md: 1.2rem;
+  --space-lg: 2rem;
+}
+
+
 html {
   width: 100%;
   height: 100%;
@@ -35,8 +43,8 @@ body {
   color: #222;
   background: radial-gradient(
     circle at 20% 30%, 
-    #ffb3ba 0%, #ffd6a5 20%, #fdffb6 35%, 
-    #caffbf 55%, #9bf6ff 75%, #a0c4ff 90%, #bdb2ff 100%
+    #f9b3badc 0%, #ffd6a5d8 20%, #fdffb6 35%, 
+    #caffbfeb 55%, #9bf7ffdd 75%, #a0c4ffd5 90%, #beb2ffbf 100%
   );
   background-blend-mode: screen;
   background-size: 200% 200%;
@@ -48,6 +56,8 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  opacity:0.95;
+  padding-top: 2rem;
 }
 
 img {
@@ -63,8 +73,8 @@ header.navbar {
   justify-content: space-between;
   position: fixed;
   top: 0; left: 0; right: 0;
-  width: 100vw;
-  padding: 0.6rem 1.2rem;
+  width: 100%;
+  padding: 0.4rem 1rem;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
   z-index: 1000;
@@ -86,9 +96,8 @@ header.navbar {
 .about-icon,
 .category-icon, 
 .interact-icon{
-  width: 25px;
-  height: 25px;
-  object-fit: contain;
+  width: 20px;
+  height: 20px;
 }
 
 /* =========================================================
@@ -253,31 +262,21 @@ header.navbar {
   transform: scale(1.05);
 }
 
-.use-location button {
-  background: none;
+
+.location-btn {
+  background: linear-gradient(135deg, #d1315688, #c99137a2);
   color: rgb(35, 34, 34);
   border: none;
+  border-radius: 20px;
   padding: 8px 16px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.use-location button:hover {
+.location-btn:hover {
   transform: scale(1.05);
-}
-
-.location-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: 20px;
-  color: black;
-  border: none;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
+  background: linear-gradient(135deg, #c99137a2, #d1315688);
 }
 
 /* =========================================================
@@ -440,312 +439,3 @@ footer a:hover {
   background: linear-gradient(135deg, #c99137a2, #d1315688);
 }
 
-/* =========================================================
-   INTERACTIVE PAGE STYLES (Update for Minimalism)
-========================================================= */
-
-main.interactive-page {
-padding-top: 6rem; 
-padding-bottom: 4rem; 
-text-align: center;
-display: flex;
-flex: 1;
-justify-content: center;
-}
-
-.api-container {
-padding: 3rem 2rem; 
-width: 90%; 
-max-width: 800px; 
-margin: 0 auto; 
-}
-
-.api-container h1 {
-font-size: 1.8rem; 
-font-weight: 800; 
-letter-spacing: 0.5px; 
-margin-bottom: 0.5rem; 
-width: 100%;
-}
-
-.api-container h2 {
-font-size: 1.2rem; 
-font-weight: 600;
-margin-bottom: 1rem;
-width: 100%;
-margin-bottom: 2rem;
-}
-
-.api-section {
-margin-bottom: 3rem; 
-padding: 1.5rem;
-background: rgba(255, 255, 255, 0.95); 
-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-border: 1px solid rgba(0, 0, 0, 0.05); 
-border-radius: 20px;  
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-/*#event-video {
- width: calc(100% + 3rem); 
- height: auto;
- margin-left: -1.5rem;
- margin-right: -1.5rem;
- margin-top: 0;
- border-radius: 0 0 20px 20px; 
- box-shadow: none; 
-}*/
-
-.audio-controls{
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  margin-top: 0.5rem;
-}
-
-.interact-btn {
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
-margin: 0 0.5rem;
-padding: 0.5rem;
-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-border: 2px solid #49e4cde0;
-background: #49e4cdec;
-border-radius: 50%;
-}
-
-.interact-btn:hover {
-transform: scale(1.1); 
-background: #6de6d3ec;
-box-shadow: 0 0 15px #6de6d3ec;
-}
-
-.favorite-btn {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.8); 
-    border: 2px solid #ffb3ba;
-    padding: 0.5rem;
-    border-radius: 50%; 
-    width: 40px; 
-    height: 40px; 
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.favorite-btn:hover {
-    transform: scale(1.1); 
-    background: #ffb3ba; 
-    box-shadow: 0 0 15px rgba(255, 179, 186, 0.8); 
-}
-
-.favorite-btn:hover .interact-btn{
-  filter: brightness(0.5);
-}
-
-.event-description {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    text-align: justify; 
-    width: 100%;
-}
-/* =========================================================
-   3D FLIP CARD EFFECT
-========================================================= */
-.event-card {
-    position: relative; 
-    display: block; 
-    height: 450px; 
-    padding: 0; 
-    perspective: 1000px; 
-    background: none; 
-    box-shadow: none;
-    border: none;
-}
-
-
-.card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1); 
-    transform-style: preserve-3d; 
-}
-
-.event-card:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
-.card-face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    border-radius: 20px;
-    backface-visibility: hidden; 
-    padding: 1.5rem;
-    display: block;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-back {
-    transform: rotateY(180deg);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), #caffbf); 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.video-player-box {
-    width: 100%;
-    margin: 0.5rem auto 1rem auto;
-    border-radius: 10px;
-    max-height: 250px;
-    overflow: hidden;
-}
-.card-front video { 
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 0;
-}
-
-.audio-controls {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-.audio-status {
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
-    font-weight: 600;
-}
-
-.card-back audio {
-    display: none; 
-}
-
-/* =========================================================
-   ABOUT US PAGE
-========================================================= */
-
-.about-main{
-  max-width: 900px;
-  margin: 80px auto 60px auto; /* leave room for fixed navbar */
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  color: #000;
-}
-.about-main:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #ffa5a5b8, #f6ffc6);
-}
-
-.about-main h1,
- .findme{
-  text-align: center;
-  font-size: 2.2rem;
-  font-family: 'Compotes-apple';
-  margin-bottom: 1rem;
-}
-.about-main h2{
-  text-align: center;
-  font-size: 2.0rem;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  margin-bottom: auto;
-}
-#about-body{
-  background-size: 200% 200%;
-  animation: softMove 15s ease-in-out infinite alternate;
-  background-position: center;
-  min-height: 100vh;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-/* =========================================================
-   CONTACT PAGE 
-========================================================= */
-.contact-main {
-  max-width: 900px;
-  margin: 80px auto 60px auto;
-  padding: 0rem 1rem;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.contact-main h1{
-  text-align: center;
-  font-size: 2.2rem;
-  font-family: 'Compotes-apple';
-  margin-bottom: 1rem;
-}
-.contact-main p{
-  text-align: center;
-  font-size: 2.2rem;
-}
-.contact-form{
-  display:flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  align-items: center;
-}
-.contact-form input,
-.contact-form textarea{
-  background-color: rgba(245, 243, 243, 0.5);
-  border-radius: 20px;
-  min-width: 500px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border: none;
-  min-height: 30px;
-  padding-left: 20px;
-}
-.contact-form input:hover,
-.contact-form textarea:hover{
-  transform: scale(1.05);
-}
-.contact-form textarea {
-  font-family:  sans-serif;
-  font-size: 0.8rem; 
-  height:80px;
-  padding-top: 7px;
-}
-
-.contact-form label{
-  text-align: left;
-  size:5px;
-}
-.contact-form button{
-  display: block;
-  margin:1rem auto;
-  width: 100px;
-  background: radial-gradient(circle at center, #f7f8a1,#f57baab6);
-  border-radius: 20px;
-  font-family:"compotes-apple";
-  font-size: large;
-}
-.contact-form button:hover {
-  transform: scale(1.05);
-}
