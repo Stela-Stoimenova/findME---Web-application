@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const locateBtn = document.getElementById("locate-btn");
-    const searchBtn = document.getElementById("search-btn");
-    const cityInput = document.getElementById("city-input");
+    const globalInput = document.getElementById("global-search-input");
     const sounds = {
         sound1 : new Audio("../assets/sax-jazz-77053.mp3"),
         sound2 : new Audio("../assets/free-tech-house-bass-253451.mp3"),
@@ -21,25 +20,35 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    if (searchBtn) {
-        searchBtn.addEventListener("click", async () => {
-            const city = cityInput.value.trim();
-            if (!city) return alert("Enter a city");
-
-            try {
-                const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(city)}`);
-                const data = await res.json();
-                if (!data.length) return alert("City not found");
-
-                const { lat, lon } = data[0];
-                document.dispatchEvent(new CustomEvent("user-location", {
-                    detail: { lat: parseFloat(lat), lng: parseFloat(lon) }
-                }));
-            } catch (err) {
-                console.error(err);
-                alert("Error locating city");
+    async function geocodeAndCenter(query){
+        try {
+            const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`);
+            const data = await res.json();
+            if (!data.length) {
+                document.dispatchEvent(new CustomEvent('apply-search', { detail: { q: query } }));
+                return;
             }
-        });
+
+            const { lat, lon } = data[0];
+            document.dispatchEvent(new CustomEvent("user-location", {
+                detail: { lat: parseFloat(lat), lng: parseFloat(lon) }
+            }));
+            const mapEl = document.getElementById('map');
+            if (mapEl && typeof mapEl.scrollIntoView === 'function') {
+                mapEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Error locating city");
+        }
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('q');
+    if (q) {
+        if (globalInput) globalInput.value = q;
+        geocodeAndCenter(q);
+        document.dispatchEvent(new CustomEvent('apply-search', { detail: { q } }));
     }
     Object.values(sounds).forEach(audio =>{
         audio.volume = 0.5;
