@@ -3,7 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>findME - Home</title>
+  <title>findME - Events</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -28,20 +33,20 @@
     <img src="../assets/categoriesIcon.png" alt="Categories" class="category-icon">
   </button>
   <div class="dropdown-content categories-content">
-    <a href="/category/sport">Sport</a>
-    <a href="/category/entertainment">Entertainment</a>
-    <a href="/category/educational">Educational</a>
-    <a href="/category/wellness">Wellness</a>
-    <a href="/category/spiritual">Spiritual</a>
-    <a href="/category/all">All Categories</a>
+    <a href="#" data-category="sport">Sport</a>
+    <a href="#" data-category="entertainment">Entertainment</a>
+    <a href="#" data-category="educational">Educational</a>
+    <a href="#" data-category="wellness">Wellness</a>
+    <a href="#" data-category="spiritual">Spiritual</a>
+    <a href="#" data-category="all">All Categories</a>
   </div>
   </div>
 
     <!-- Search Bar -->
     <div class="search-box">
-      <form>
-        <input type="text" placeholder="cities, events, workshops..." />
-        <button type="button">
+      <form id="global-search-form">
+        <input id="global-search-input" type="text" placeholder="cities, events, workshops..." />
+        <button id="search-btn" type="submit">
           <img src="../assets/searchIcon.png" alt="search-icon" class="search-icon">
         </button>
       </form>
@@ -67,33 +72,47 @@
   </div>
   </div>
 
-    <div class="dropdown-user">
-  <button class="dropbtn">
-    <img src="../assets/user-icon.png" alt="User Icon" class="user-icon-logo">
-  </button>
-  <div class="dropdown-content">
-    <label for="login-toggle" class="dropdown-label">Log In</label>
-    <label for="signup-toggle" class="dropdown-label">Sign Up</label>
-  </div>
-</div>
+    <!-- Saved Events Link -->
+    <a href="../html/saved.html" class="saved-link" title="Saved Events">
+      <img src="../assets/events-icon.png?v=1" alt="Saved" class="saved-icon">
+    </a>
 
   </div>
 </header>
 
 <main>
   <section id="interactive-section">
-
-    <div id="canvas-container">
-        <canvas id="myCanvas" width="400" height="200"></canvas>
+    <!-- Filter Section -->
+    <div id="filter-section">
+      <h2>Filter Events</h2>
+      <div class="filter-controls">
+        <button class="filter-btn active" data-category="all">All Events</button>
+        <button class="filter-btn" data-category="sport">Sport</button>
+        <button class="filter-btn" data-category="entertainment">Entertainment</button>
+        <button class="filter-btn" data-category="educational">Educational</button>
+        <button class="filter-btn" data-category="wellness">Wellness</button>
+        <button class="filter-btn" data-category="spiritual">Spiritual</button>
+      </div>
     </div>
-    <!-- Map -->
-    <div id="map-section">
-      <h2>Local Events Map</h2>
-      <div id="map" aria-label="Local events map"></div>
+
+    <!-- Content Grid with Map and Events -->
+    <div class="content-grid">
+      <!-- Map -->
+      <div id="map-section">
+        <h2>Local Events Map</h2>
+        <div id="map" aria-label="Local events map"></div>
+      </div>
+
+      <!-- Event Grid -->
+      <div id="event-grid"></div>
     </div>
 
-    <!-- Event Grid -->
-    <div id="event-grid"></div>
+    <!-- Video API Placeholder Section -->
+    <section id="video-section">
+      <h2>Video Highlights (Coming Soon)</h2>
+      <p>We’re adding a video section to highlight top events with trailers and recaps. This box will load videos from your chosen API.</p>
+      <div class="video-placeholder" aria-label="Video area placeholder"></div>
+    </section>
 
   </section>
 </main>
@@ -109,6 +128,8 @@
 <script src="../js/events.js"></script>
 <script src="../js/map.js"></script>
 <script src="../js/script.js"></script>
+<script src="../js/dropdown.js"></script>
+<script src="../js/global.js"></script>
 
 </body>
 </html>

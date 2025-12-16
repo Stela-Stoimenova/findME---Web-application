@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>findME - Saved Events</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/interactive.css" />
+</head>
+<body>
+<header class="navbar">
+  <div class="navbar-left">
+    <div class="logo"><a href="../html/index.html">findME</a></div>
+
+    <div class="dropdown-categories">
+      <button class="dropbtn">
+        <img src="../assets/categoriesIcon.png" alt="Categories" class="category-icon">
+      </button>
+      <div class="dropdown-content categories-content">
+        <a href="../html/interactive.html?category=sport">Sport</a>
+        <a href="../html/interactive.html?category=entertainment">Entertainment</a>
+        <a href="../html/interactive.html?category=educational">Educational</a>
+        <a href="../html/interactive.html?category=wellness">Wellness</a>
+        <a href="../html/interactive.html?category=spiritual">Spiritual</a>
+        <a href="../html/interactive.html?category=all">All</a>
+      </div>
+    </div>
+
+    <div class="search-box">
+      <form id="global-search-form">
+        <input id="global-search-input" type="text" placeholder="cities, events, workshops..." />
+        <button id="search-btn" type="submit">
+          <img src="../assets/searchIcon.png" alt="search-icon" class="search-icon">
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="navbar-right">
+    <div class="dropdown-about">
+      <button class="dropbtn">
+        <img src="../assets/about-icon.png" alt="About" class="about-icon">
+      </button>
+      <div class="dropdown-content">
+        <a href="../html/about.html">About Us</a>
+      </div>
+    </div>
+
+    <a href="../html/saved.html" class="saved-link" title="Saved Events">
+      <img src="../assets/events-icon.png?v=1" alt="Saved" class="saved-icon">
+    </a>
+  </div>
+</header>
+
+<main>
+  <section id="interactive-section">
+    <div id="filter-section">
+      <h2>Your Saved Events</h2>
+      <p style="color:#5a6c7d; margin:0;">Events you marked as favorites will appear here.</p>
+    </div>
+
+    <div class="content-grid">
+      <div id="event-grid" class="saved-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 findME. All rights reserved.</p>
+</footer>
+
+<script src="../js/events.js"></script>
+<script src="../js/saved.js"></script>
+<script src="../js/dropdown.js"></script>
+<script src="../js/global.js"></script>
+</body>
+</html>
