@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Your saved events list — quickly return to events you marked as favorites." />
+  <meta property="og:title" content="findME - Saved Events" />
+  <meta property="og:description" content="Events you saved for later. Access your favorites anytime." />
+  <meta property="og:type" content="website" />
   <title>findME - Saved Events</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,13 +15,14 @@
   <link rel="stylesheet" href="../css/interactive.css" />
 </head>
 <body>
-<header class="navbar">
+  <a class="skip-link" href="#main">Skip to main content</a>
+<header class="navbar" aria-label="Main navigation">
   <div class="navbar-left">
     <div class="logo"><a href="../html/index.html">findME</a></div>
 
     <div class="dropdown-categories">
-      <button class="dropbtn">
-        <img src="../assets/categoriesIcon.png" alt="Categories" class="category-icon">
+      <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+        <img src="../assets/categoriesIcon.png" alt="Categories" class="category-icon" loading="lazy">
       </button>
       <div class="dropdown-content categories-content">
         <a href="../html/interactive.html?category=sport">Sport</a>
@@ -30,10 +35,10 @@
     </div>
 
     <div class="search-box">
-      <form id="global-search-form">
+      <form id="global-search-form" aria-label="Search events">
         <input id="global-search-input" type="text" placeholder="cities, events, workshops..." />
-        <button id="search-btn" type="submit">
-          <img src="../assets/searchIcon.png" alt="search-icon" class="search-icon">
+        <button id="search-btn" type="submit" aria-label="Submit search">
+          <img src="../assets/searchIcon.png" alt="search-icon" class="search-icon" loading="lazy">
         </button>
       </form>
     </div>
@@ -41,8 +46,8 @@
 
   <div class="navbar-right">
     <div class="dropdown-about">
-      <button class="dropbtn">
-        <img src="../assets/about-icon.png" alt="About" class="about-icon">
+      <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+        <img src="../assets/about-icon.png" alt="About" class="about-icon" loading="lazy">
       </button>
       <div class="dropdown-content">
         <a href="../html/about.html">About Us</a>
@@ -50,12 +55,12 @@
     </div>
 
     <a href="../html/saved.html" class="saved-link" title="Saved Events">
-      <img src="../assets/events-icon.png?v=1" alt="Saved" class="saved-icon">
+      <img src="../assets/events-icon.png?v=1" alt="Saved" class="saved-icon" loading="lazy">
     </a>
   </div>
 </header>
 
-<main>
+<main id="main">
   <section id="interactive-section">
     <div id="filter-section">
       <h2>Your Saved Events</h2>
@@ -72,9 +77,9 @@
   <p>&copy; 2025 findME. All rights reserved.</p>
 </footer>
 
-<script src="../js/events.js"></script>
-<script src="../js/saved.js"></script>
-<script src="../js/dropdown.js"></script>
-<script src="../js/global.js"></script>
+<script src="../js/events.js" defer></script>
+<script src="../js/saved.js" defer></script>
+<script src="../js/dropdown.js" defer></script>
+<script src="../js/global.js" defer></script>
 </body>
 </html>

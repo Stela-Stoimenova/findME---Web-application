@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Interactive map of local events. Filter by category and discover happenings near you." />
+  <meta property="og:title" content="findME - Events map" />
+  <meta property="og:description" content="Explore local events on an interactive map. Filter by category and save favorites." />
+  <meta property="og:type" content="website" />
   <title>findME - Events</title>
   
   <!-- Fonts -->
@@ -19,8 +23,9 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-<header class="navbar">
+<header class="navbar" aria-label="Main navigation">
   <div class="navbar-left">
     <!-- Logo -->
     <div class="logo">
@@ -29,8 +34,8 @@
 
      <!--Categories-->
     <div class="dropdown-categories">
-  <button class="dropbtn">
-    <img src="../assets/categoriesIcon.png" alt="Categories" class="category-icon">
+  <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+    <img src="../assets/categoriesIcon.png" alt="Categories" class="category-icon" loading="lazy">
   </button>
   <div class="dropdown-content categories-content">
     <a href="#" data-category="sport">Sport</a>
@@ -44,10 +49,10 @@
 
     <!-- Search Bar -->
     <div class="search-box">
-      <form id="global-search-form">
+      <form id="global-search-form" aria-label="Search events">
         <input id="global-search-input" type="text" placeholder="cities, events, workshops..." />
-        <button id="search-btn" type="submit">
-          <img src="../assets/searchIcon.png" alt="search-icon" class="search-icon">
+        <button id="search-btn" type="submit" aria-label="Submit search">
+          <img src="../assets/searchIcon.png" alt="search-icon" class="search-icon" loading="lazy">
         </button>
       </form>
     </div>
@@ -64,8 +69,8 @@
 
   <!--ABOUT DROPDOWN-->
   <div class="dropdown-about">
-  <button class="dropbtn">
-   <img src="../assets/about-icon.png" alt="About" class="about-icon">
+  <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+   <img src="../assets/about-icon.png" alt="About" class="about-icon" loading="lazy">
   </button>
   <div class="dropdown-content">
     <a href="../html/about.html">About Us</a>
@@ -74,13 +79,13 @@
 
     <!-- Saved Events Link -->
     <a href="../html/saved.html" class="saved-link" title="Saved Events">
-      <img src="../assets/events-icon.png?v=1" alt="Saved" class="saved-icon">
+      <img src="../assets/events-icon.png?v=1" alt="Saved" class="saved-icon" loading="lazy">
     </a>
 
   </div>
 </header>
 
-<main>
+<main id="main">
   <section id="interactive-section">
     <!-- Filter Section -->
     <div id="filter-section">
@@ -122,14 +127,15 @@
 </footer>
 
 <!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
 
-<!-- Custom Scripts -->
-<script src="../js/events.js"></script>
-<script src="../js/map.js"></script>
-<script src="../js/script.js"></script>
-<script src="../js/dropdown.js"></script>
-<script src="../js/global.js"></script>
+<!-- Custom Scripts (deferred to improve load order) -->
+<script src="../js/events.js" defer></script>
+<script src="../js/map.js" defer></script>
+<script src="../js/video.js" defer></script>
+<script src="../js/script.js" defer></script>
+<script src="../js/dropdown.js" defer></script>
+<script src="../js/global.js" defer></script>
 
 </body>
 </html>

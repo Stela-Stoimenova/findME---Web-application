@@ -84,6 +84,29 @@ img {
   vertical-align: middle;
 }
 
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  background: #ffffff;
+  color: var(--text-dark);
+  padding: 0.5rem 1rem;
+  z-index: 2000;
+  border-radius: 6px;
+  box-shadow: var(--shadow-md);
+}
+
 /* =========================================================
    NAVBAR
 ========================================================= */

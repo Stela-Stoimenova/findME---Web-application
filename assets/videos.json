@@ -1,0 +1,38 @@
+{
+  "data": [
+    {
+      "id": "vid_jazz_1",
+      "title": "Jazz Night Highlights",
+      "description": "Short highlights from a live jazz night — music, crowd and atmosphere.",
+      "category": "entertainment",
+      "tags": ["jazz", "music", "live"],
+      "duration": 90,
+      "thumbnail": "../assets/jazzfestival.jpg",
+      "posterLow": "../assets/jazzfestival.jpg",
+      "sourceType": "youtube",
+      "youtubeId": "gFwhlGTYYQ4",
+      "hlsUrl": "",
+      "captions": [],
+      "transcriptUrl": "",
+      "previewSeconds": 30,
+      "publishedAt": "2025-11-01T20:00:00Z"
+    },
+    {
+      "id": "vid_marathon_1",
+      "title": "City Marathon Highlights",
+      "description": "Highlights from the city marathon — runners, finish line and celebrations.",
+      "category": "sport",
+      "tags": ["marathon", "running", "sport"],
+      "duration": 120,
+      "thumbnail": "../assets/marathon.jpg",
+      "posterLow": "../assets/marathon.jpg",
+      "sourceType": "youtube",
+      "youtubeId": "g_pBOrgGM0U",
+      "hlsUrl": "",
+      "captions": [],
+      "transcriptUrl": "",
+      "previewSeconds": 30,
+      "publishedAt": "2025-09-12T08:00:00Z"
+    }
+  ]
+}
