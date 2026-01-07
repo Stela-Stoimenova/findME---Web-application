@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Create gradient for each bar
     const gradient = ctx.createLinearGradient(x, y, x, y + barHeight);
-    gradient.addColorStop(0, "#e24a5e");
-    gradient.addColorStop(0.5, "#f39c6b");
-    gradient.addColorStop(1, "#4A90E2");
+    gradient.addColorStop(0, "#e24a5ea5");
+    gradient.addColorStop(0.5, "#f39d6bb0");
+    gradient.addColorStop(1, "#4a91e29c");
     
     ctx.fillStyle = gradient;
     ctx.fillRect(x, y, barWidth, barHeight);

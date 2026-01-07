@@ -22,12 +22,10 @@
     thumb.loading = 'lazy';
     thumb.className = 'video-thumb';
 
-    // wrap thumbnail for overlay
     const thumbWrap = document.createElement('div');
     thumbWrap.className = 'thumb-wrap';
     thumbWrap.appendChild(thumb);
 
-    // favorite/save button (reuses site style)
     const fav = document.createElement('button');
     fav.className = 'favorite-btn';
     fav.title = 'Save video';

@@ -39,7 +39,5 @@
         }
       });
     });
-
-    // Filters button removed per request; categories icon handles filters.
   });
 })();

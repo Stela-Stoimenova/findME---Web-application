@@ -42,8 +42,8 @@
 
         userMarker = L.circleMarker([lat, lng], {
             radius: 8,
-            fillColor: "#0fe0f3ff",
-            color: "#e71593ff",
+            fillColor: "#940ff3ff",
+            color: "#a515e7ff",
             weight: 1.25,
             fillOpacity: 0.95
         }).addTo(map);
